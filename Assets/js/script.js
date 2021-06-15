@@ -56,23 +56,34 @@ function generatePassword()  {
     for ( var i = 0; i < passwordLength; i++)  { 
       result += allCharacters[Math.floor(Math.random() * allCharacters.length) ] ;
     }
-    // for ( var i = 0; i < passwordLength; i++)  { 
-    //   result += upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)  ] ;
+    
+    function writePassword() {
+      var result = generatedPassword();
+
+      // result = result.replace(“[#password]“, “”);
+      var passwordText.value = document.querySelector(“password”);
+      passwordText.value = result;
+      }
+
+
+
+    // function generatePassword() {
+    //   passwordText = passwordText.replace(password, "");
+    //   // result.value = document.querySelector(“#password”);
+    //   function writePassword() {
+    //     var result = generatePassword();
+    //     result = result.replace[document.querySelector(“#password”)];
     // }
-    // for ( var i = 0; i < passwordLength; i++)  { 
-    //   result += numbersPass[Math.floor(Math.random() * numbersPass.length) ] ;
-    // }
-    // for ( var i = 0; i < passwordLength; i++)  { 
-    //   result += specialCharacters[Math.floor(Math.random() * specialCharacters.length) ];
-    // }
-    console.log(result);
-    return result;
+
+      console.log(result);
+      return result;
   }
 
-
-  console.log(passwordArr);  // this is the array of all characters to choose from in the final password
+  // this is the array of all characters to choose from in the final password
+  console.log(passwordArr);  
   passwordText(passwordArr, length);
 }
+// document.getElementById(“password”).textContent = “This is your secure password:  ” + passwordText
 
 generatePassword();
 
