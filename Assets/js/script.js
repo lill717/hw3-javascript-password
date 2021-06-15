@@ -5,27 +5,27 @@ var upperCaseCharacters = ("ABCDEFGHIJKLMNOPQRSTUVWXYZ").split("");
 var numbersPass = ("1234567890").split("");
 var specialCharacters = ("!@#$%^&*_").split("");
 var allCharacters = [];
+var result = "";
 
-
-//Randomize the characters // need to change to arrOfChars or allCharacters
-function passwordText(allCharacters, passwordLength) {
-  // for ( var i = 0; i < passwordLength; i++)  { 
-    // result += passwordText.charAt(Math.floor(Math.random() * passwordLength) );
-  // }
-  for ( var i = 0; i < passwordLength; i++)  { 
-    result += upperCaseCharacters.charAt(Math.floor(Math.random() * lowerCaseCharacters) );
-  }
-  for ( var i = 0; i < passwordLength; i++)  { 
-    result += upperCaseCharacters.charAt(Math.floor(Math.random() * upperCaseCharacters) );
-  }
-  for ( var i = 0; i < passwordLength; i++)  { 
-    result += numbersPass.charAt(Math.floor(Math.random() * numbersPass) );
-  }
-  for ( var i = 0; i < passwordLength; i++)  { 
-    result += specialCharacters.charAt(Math.floor(Math.random() * specialCharacters) );
-  }
-  return result;
-}
+// //Randomize the characters // need to change to arrOfChars or allCharacters
+// function passwordText(allCharacters, passwordLength) {
+//   // for ( var i = 0; i < passwordLength; i++)  { 
+//     // result += passwordText.charAt(Math.floor(Math.random() * passwordLength) );
+//   // }
+//   for ( var i = 0; i < passwordLength; i++)  { 
+//     result += upperCaseCharacters.charAt(Math.floor(Math.random() * passwordLength) );
+//   }
+//   for ( var i = 0; i < passwordLength; i++)  { 
+//     result += upperCaseCharacters.charAt(Math.floor(Math.random() * passwordLength) );
+//   }
+//   for ( var i = 0; i < passwordLength; i++)  { 
+//     result += numbersPass.charAt(Math.floor(Math.random() * passwordLength) );
+//   }
+//   for ( var i = 0; i < passwordLength; i++)  { 
+//     result += specialCharacters.charAt(Math.floor(Math.random() * passwordLength) );
+//   }
+//   return result;
+// }
 
 // Write password to the #password input
 function writePassword() {
@@ -68,6 +68,26 @@ function generatePassword()  {
   if (special === true) {
     passwordArr = passwordArr.concat(specialCharacters); 
   }
+
+  function passwordText(allCharacters, passwordLength) {
+ 
+    for ( var i = 0; i < passwordLength; i++)  { 
+      result += lowerCase.charAt(Math.floor(Math.random() * passwordLength) );
+    }
+    for ( var i = 0; i < passwordLength; i++)  { 
+      result += upperCaseCharacters.charAt(Math.floor(Math.random() * passwordLength) );
+    }
+    for ( var i = 0; i < passwordLength; i++)  { 
+      result += numbersPass.charAt(Math.floor(Math.random() * passwordLength) );
+    }
+    for ( var i = 0; i < passwordLength; i++)  { 
+      result += specialCharacters.charAt(Math.floor(Math.random() * passwordLength) );
+    }
+    return result;
+  }
+
+
+
 
   console.log(passwordArr);  // this is the array of all characters to choose from in the final password
   passwordText(passwordArr, length);
