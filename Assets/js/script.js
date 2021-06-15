@@ -7,25 +7,6 @@ var specialCharacters = ("!@#$%^&*_").split("");
 var allCharacters = [];
 var result = "";
 
-// //Randomize the characters // need to change to arrOfChars or allCharacters
-// function passwordText(allCharacters, passwordLength) {
-//   // for ( var i = 0; i < passwordLength; i++)  { 
-//     // result += passwordText.charAt(Math.floor(Math.random() * passwordLength) );
-//   // }
-//   for ( var i = 0; i < passwordLength; i++)  { 
-//     result += upperCaseCharacters.charAt(Math.floor(Math.random() * passwordLength) );
-//   }
-//   for ( var i = 0; i < passwordLength; i++)  { 
-//     result += upperCaseCharacters.charAt(Math.floor(Math.random() * passwordLength) );
-//   }
-//   for ( var i = 0; i < passwordLength; i++)  { 
-//     result += numbersPass.charAt(Math.floor(Math.random() * passwordLength) );
-//   }
-//   for ( var i = 0; i < passwordLength; i++)  { 
-//     result += specialCharacters.charAt(Math.floor(Math.random() * passwordLength) );
-//   }
-//   return result;
-// }
 
 // Write password to the #password input
 function writePassword() {
@@ -40,6 +21,7 @@ function generatePassword()  {
   var passwordLength = prompt("Please choose a number between 8 and 128");
   var passwordArr = [];
   var length = parseInt(passwordLength)
+  
   if (length < 8 || length > 128) {
     alert ("The number can only be between 8 and 128");
     generatePassword();
@@ -64,7 +46,7 @@ function generatePassword()  {
   }
   
   //how to push uppercaseCharacters array into allCharacters arr
-  var special = confirm("Would you like to add a special character?"); 
+  var special = confirm("WouldI you like to add a special character?"); 
   if (special === true) {
     passwordArr = passwordArr.concat(specialCharacters); 
   }
@@ -72,21 +54,20 @@ function generatePassword()  {
   function passwordText(allCharacters, passwordLength) {
  
     for ( var i = 0; i < passwordLength; i++)  { 
-      result += lowerCase.charAt(Math.floor(Math.random() * passwordLength) );
+      result += allCharacters[Math.floor(Math.random() * allCharacters.length) ] ;
     }
-    for ( var i = 0; i < passwordLength; i++)  { 
-      result += upperCaseCharacters.charAt(Math.floor(Math.random() * passwordLength) );
-    }
-    for ( var i = 0; i < passwordLength; i++)  { 
-      result += numbersPass.charAt(Math.floor(Math.random() * passwordLength) );
-    }
-    for ( var i = 0; i < passwordLength; i++)  { 
-      result += specialCharacters.charAt(Math.floor(Math.random() * passwordLength) );
-    }
+    // for ( var i = 0; i < passwordLength; i++)  { 
+    //   result += upperCaseCharacters[Math.floor(Math.random() * upperCaseCharacters.length)  ] ;
+    // }
+    // for ( var i = 0; i < passwordLength; i++)  { 
+    //   result += numbersPass[Math.floor(Math.random() * numbersPass.length) ] ;
+    // }
+    // for ( var i = 0; i < passwordLength; i++)  { 
+    //   result += specialCharacters[Math.floor(Math.random() * specialCharacters.length) ];
+    // }
+    console.log(result);
     return result;
   }
-
-
 
 
   console.log(passwordArr);  // this is the array of all characters to choose from in the final password
